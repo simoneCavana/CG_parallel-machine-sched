@@ -1,0 +1,46 @@
+
+machine: 3
+jobs: 20
+w: [ 2  1  8  3  3  8  5  3  7  4  9  5 12 21 16  9 11 24 13 30]
+p: [20  2 10  3  2  4  2  1  2  1  2  1  2  3  2  1  1  2  1  2]
+
+	+++RESULTS+++
+optimum total cost: 1002.0
+serial schedule cost - UB: 2437
+processing time LB: 8.0
+processing time UB: 34.666666666666664
+selected schedule: [25, 27, 29]
+	M0 <- [19, 14, 11, 9, 6, 2],	sum(p_j)=18,	c_s=357
+	M1 <- [17, 15, 12, 10, 7, 4, 3, 1],	sum(p_j)=15,	c_s=306
+	M2 <- [18, 16, 13, 8, 5, 0],	sum(p_j)=31,	c_s=339
+
+Total iteration: 1
+Heuristic processing time: 0 min 6 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 6 s
+
+--------------------------------------------------
+machine: 3
+jobs: 20
+w: [ 2  1  8  3  3  8  5  3  7  4  9  5 12 21 16  9 11 24 13 30]
+p: [20  2 10  3  2  4  2  1  2  1  2  1  2  3  2  1  1  2  1  2]
+
+	+++RESULTS+++
+optimum total cost: 1002.0
+serial schedule cost - UB: 2437
+processing time LB: 8.0
+processing time UB: 34.666666666666664
+selected schedule: [3, 9, 10, 19, 20, 29]
+	M0 <- [19, 15, 12, 9, 6, 2],	sum(p_j)=18,	c_s=355
+	M1 <- [17, 15, 12, 11, 8, 4, 3, 1],	sum(p_j)=15,	c_s=305
+	M2 <- [18, 16, 14, 10, 7, 5, 0],	sum(p_j)=31,	c_s=324
+	M3 <- [19, 14, 11, 9, 6, 4, 3, 1],	sum(p_j)=15,	c_s=297
+	M4 <- [18, 16, 13, 8, 7, 2],	sum(p_j)=18,	c_s=357
+	M5 <- [17, 13, 10, 5, 0],	sum(p_j)=31,	c_s=366
+
+Total iteration: 2
+Heuristic processing time: 0 min 6 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 6 s
+
+--------------------------------------------------

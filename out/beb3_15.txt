@@ -1,0 +1,22 @@
+
+machine: 3
+jobs: 15
+w: [ 2  4  5  5  7  4  4 11 11  9  5  8 12  8  9]
+p: [ 46  86  93  82  96  52  48 109 100  77  39  55  78  40  45]
+
+	+++RESULTS+++
+optimum total cost: 17584.0
+serial schedule cost - UB: 44699
+processing time LB: 276.0
+processing time UB: 421.3333333333333
+selected schedule: [7, 8, 12]
+	M0 <- [14, 10, 7, 5, 2],	sum(p_j)=338,	c_s=5618
+	M1 <- [13, 11, 9, 6, 3, 0],	sum(p_j)=348,	c_s=5714
+	M2 <- [12, 8, 4, 1],	sum(p_j)=360,	c_s=6252
+
+Total iteration: 1
+Heuristic processing time: 0 min 4 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 4 s
+
+--------------------------------------------------

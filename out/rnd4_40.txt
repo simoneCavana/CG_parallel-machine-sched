@@ -1,0 +1,98 @@
+
+machine: 4
+jobs: 40
+w: [82 38 89 90 19 62 77 49 26 20 44 22 16  7 23  4  7 47 55 12 34 55 84 10
+ 18  3 38 76 83 78 49 86 93 99 31 81 57 66 22 24]
+p: [83 70 79 37 34 76 85 38 25 68 42 51 50 11 46 65 76 59 42 50 61  5  5 42
+ 93 92 84 48 32 31 84 16 46 57 20 18 58 73 56 19]
+
+	+++RESULTS+++
+optimum total cost: 291869.0
+serial schedule cost - UB: 1023644
+processing time LB: 437.0
+processing time UB: 576.5
+selected schedule: [0, 1, 2, 3]
+	M0 <- [35, 32, 18, 8, 36, 5, 4, 26, 24],	sum(p_j)=476,	c_s=72652
+	M1 <- [21, 28, 27, 2, 37, 13, 1, 14, 12, 23, 25],	sum(p_j)=548,	c_s=75064
+	M2 <- [22, 29, 33, 39, 0, 17, 20, 11, 9, 15],	sum(p_j)=499,	c_s=72489
+	M3 <- [31, 3, 34, 7, 10, 6, 30, 38, 19, 16],	sum(p_j)=504,	c_s=71664
+
+Total iteration: 1
+Heuristic processing time: 0 min 14 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 14 s
+
+--------------------------------------------------
+machine: 4
+jobs: 40
+w: [61 64 10 32 18 22 36 14 12 23 21 46 62 30 43 76 32 84 96 56 58 53  5 65
+  7 73 63 89  3 21 83 54  7 68 32 15  5 39 84 83]
+p: [97 28 42 31 44 47 72 31 73 90 53 56 72 19 98 96  8 97  9 55 31 12 50 33
+ 82 81 36 46 73 31 89 90 90 28 61  3 55 50 92 36]
+
+	+++RESULTS+++
+optimum total cost: 307815.0
+serial schedule cost - UB: 1078343
+processing time LB: 473.25
+processing time UB: 620.25
+selected schedule: [28, 29, 30, 31]
+	M0 <- [35, 33, 23, 3, 25, 15, 29, 6, 9, 32],	sum(p_j)=555,	c_s=77316
+	M1 <- [21, 1, 20, 19, 17, 37, 34, 14, 22, 36],	sum(p_j)=537,	c_s=78108
+	M2 <- [18, 27, 13, 30, 12, 0, 7, 10, 8, 28],	sum(p_j)=562,	c_s=77702
+	M3 <- [16, 39, 26, 38, 11, 31, 5, 4, 2, 24],	sum(p_j)=533,	c_s=74689
+
+Total iteration: 1
+Heuristic processing time: 0 min 14 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 14 s
+
+--------------------------------------------------
+machine: 4
+jobs: 40
+w: [ 57   4  43  91  30  73  98  41  37  35  44 100  76  50  34   2  68  19
+  33  57  22  69  25  95  63  51  33  77  58  12  45  62   8  90  56  33
+  27  64  56  95]
+p: [ 8  1 25 18 58 34 95 54 61 37 87 84 78 48  2 82 60  6 27 75 29 95 33 84
+ 68 56 11 83 82 80 19 82 47 89 70 92 28 43 93 63]
+
+	+++RESULTS+++
+optimum total cost: 438849.0
+serial schedule cost - UB: 1561761
+processing time LB: 475.5
+processing time UB: 618.0
+selected schedule: [16, 17, 19, 30]
+	M0 <- [0, 5, 11, 33, 25, 19, 22, 8, 35],	sum(p_j)=532,	c_s=112326
+	M1 <- [1, 17, 30, 37, 23, 12, 34, 31, 38, 29],	sum(p_j)=556,	c_s=111744
+	M2 <- [14, 26, 2, 18, 16, 13, 36, 27, 20, 21, 10, 15],	sum(p_j)=577,	c_s=106693
+	M3 <- [3, 39, 6, 9, 24, 7, 28, 4, 32],	sum(p_j)=522,	c_s=108086
+
+Total iteration: 3
+Heuristic processing time: 0 min 14 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 14 s
+
+--------------------------------------------------
+machine: 4
+jobs: 40
+w: [33 14 59 82 72 37 63 39 71 24 33 75 41 17  1 76 55 12 12 42 34 71 30 87
+ 38 86 97 32 53 78 40 34 68 46 40 51 38 66 54 56]
+p: [96 45 11 41 10 56 73  2 87 55 41 80 29 51 48 59 26 15  5 84 97 40 17 28
+ 82  2 74 41 29 78 85 78 70 46 73 76 53 63 92 81]
+
+	+++RESULTS+++
+optimum total cost: 369056.0
+serial schedule cost - UB: 1311056
+processing time LB: 457.0
+processing time UB: 602.5
+selected schedule: [7, 8, 9, 11]
+	M0 <- [2, 28, 26, 32, 10, 36, 38, 24, 13, 14],	sum(p_j)=551,	c_s=90586
+	M1 <- [7, 23, 21, 37, 11, 27, 35, 30, 20],	sum(p_j)=512,	c_s=91377
+	M2 <- [4, 16, 22, 12, 29, 8, 5, 34, 9, 0],	sum(p_j)=527,	c_s=91655
+	M3 <- [25, 18, 3, 15, 33, 6, 17, 39, 19, 31, 1],	sum(p_j)=529,	c_s=95438
+
+Total iteration: 1003
+Heuristic processing time: 0 min 14 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 1 min 56 s
+
+--------------------------------------------------

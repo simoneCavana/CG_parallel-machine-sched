@@ -1,0 +1,43 @@
+
+machine: 3
+jobs: 7
+w: [1 1 4 6 9 4 9]
+p: [5 2 6 8 9 1 1]
+
+	+++RESULTS+++
+optimum total cost: 199.0
+serial schedule cost - UB: 389
+processing time LB: 4.666666666666667
+processing time UB: 16.666666666666668
+selected schedule: [4, 6, 8]
+	M0 <- [6, 2, 1],	sum(p_j)=9,	c_s=46
+	M1 <- [5, 3, 0],	sum(p_j)=14,	c_s=72
+	M2 <- [4],	sum(p_j)=9,	c_s=81
+
+Total iteration: 1
+Heuristic processing time: 0 min 2 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 3
+jobs: 7
+w: [1 1 4 6 9 4 9]
+p: [5 2 6 8 9 1 1]
+
+	+++RESULTS+++
+optimum total cost: 199.0
+serial schedule cost - UB: 389
+processing time LB: 4.666666666666667
+processing time UB: 16.666666666666668
+selected schedule: [5, 21, 22]
+	M0 <- [6, 2, 1],	sum(p_j)=9,	c_s=46
+	M1 <- [4, 0],	sum(p_j)=14,	c_s=95
+	M2 <- [5, 3],	sum(p_j)=9,	c_s=58
+
+Total iteration: 1
+Heuristic processing time: 0 min 1 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------

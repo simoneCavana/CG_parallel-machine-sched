@@ -1,0 +1,101 @@
+
+machine: 2
+jobs: 5
+w: [1 2 3 2 4]
+p: [5 7 6 3 4]
+
+	+++RESULTS+++
+optimum total cost: 85.0
+serial schedule cost - UB: 134
+processing time LB: 9.0
+processing time UB: 16.0
+selected schedule: [17, 19]
+	M0 <- [4, 1],	sum(p_j)=11,	c_s=38
+	M1 <- [3, 2, 0],	sum(p_j)=14,	c_s=47
+
+Total iteration: 1
+Heuristic processing time: 0 min 1 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 2
+jobs: 5
+w: [  1   2   3   2 100]
+p: [ 5  7  6  3 11]
+
+	+++RESULTS+++
+optimum total cost: 1181.0
+serial schedule cost - UB: 1274
+processing time LB: 10.5
+processing time UB: 21.5
+selected schedule: [15, 19]
+	M0 <- [3, 2, 1],	sum(p_j)=16,	c_s=65
+	M1 <- [4, 0],	sum(p_j)=16,	c_s=1116
+
+Total iteration: 1
+Heuristic processing time: 0 min 1 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 2
+jobs: 5
+w: [  1   2   3   2 100]
+p: [ 5  7  6  3 11]
+
+	+++RESULTS+++
+optimum total cost: 1181.0
+serial schedule cost - UB: 1274
+processing time LB: 10.5
+processing time UB: 21.5
+selected schedule: [13, 19]
+	M0 <- [4, 0],	sum(p_j)=16,	c_s=1116
+	M1 <- [3, 2, 1],	sum(p_j)=16,	c_s=65
+
+Total iteration: 1
+Heuristic processing time: 0 min 1 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 2
+jobs: 5
+w: [1 2 3 2 4]
+p: [5 7 6 3 4]
+
+	+++RESULTS+++
+optimum total cost: 85.0
+serial schedule cost - UB: 134
+processing time LB: 9.0
+processing time UB: 16.0
+selected schedule: [13, 15]
+	M0 <- [4, 1],	sum(p_j)=11,	c_s=38
+	M1 <- [3, 2, 0],	sum(p_j)=14,	c_s=47
+
+Total iteration: 1
+Heuristic processing time: 0 min 1 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 2
+jobs: 5
+w: [1 2 3 2 4]
+p: [5 7 6 3 4]
+
+	+++RESULTS+++
+optimum total cost: 85.0
+serial schedule cost - UB: 134
+processing time LB: 9.0
+processing time UB: 16.0
+selected schedule: [18, 19]
+	M0 <- [4, 1],	sum(p_j)=11,	c_s=38
+	M1 <- [3, 2, 0],	sum(p_j)=14,	c_s=47
+
+Total iteration: 1
+Heuristic processing time: 0 min 2 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
