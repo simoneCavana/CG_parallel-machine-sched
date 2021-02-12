@@ -10,4 +10,4 @@ MIN = 2000                  # minimum number of heuristic iteration
 MAX = 5000                  # maximum number of heuristic iteration
 m   = [3,4,5]               # number of machine poll
 n   = [20, 30, 40, 50]      # number of job poll
-nnc = 5                     # Number of New Column to add after pricing
+nnc = 3                     # Number of New Column to add after pricing

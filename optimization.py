@@ -153,13 +153,13 @@ def neighborhood_search(d, benchmark, rng):
 """
 
 
-def pricing_algorithm(benchmark, lambda_0, lambda_j, n_col2add):
+def pricing_algorithm(benchmark, lambda_j, n_col2add):
     pj = np.cumsum(benchmark['p'][np.arange(benchmark['n'])])
     hmin, hmax = processing_bound(benchmark)
 
     # INIT
-    F = np.full((benchmark['n'], int(np.ceil(hmax))), np.inf)
-    F[0, 0] = -lambda_0
+    F = np.full((len(lambda_j), int(np.ceil(hmax))), np.inf)
+    F[0, 0] = -lambda_j[0]
 
     # RECURSION PASS
     for job, fj in enumerate(F):
@@ -167,15 +167,17 @@ def pricing_algorithm(benchmark, lambda_0, lambda_j, n_col2add):
             # for each job (skip the base job 0)
             for t, fjt in enumerate(fj):
                 # for each t = 0, ..., min{P(j), Hmax}
-                if t > min(pj[job], hmax):
+                # set the actual job because dual variable lambda are n+1
+                real_job = job - 1
+                if t > min(pj[real_job], hmax):
                     # leave the current values (probably inf) and skip to a new job
                     break
 
                 # check the condition r_j + p_j <= t <= d_j
                 # d_j = Hmax
                 # r_j = ?
-                if benchmark['p'][job] <= t <= int(np.ceil(hmax)):
-                    op2nd = F[job - 1, t - benchmark['p'][job]] + benchmark['w'][job] * t - lambda_j[job]
+                if benchmark['p'][real_job] <= t <= int(np.ceil(hmax)):
+                    op2nd = F[job - 1, t - benchmark['p'][real_job]] + benchmark['w'][real_job] * t - lambda_j[job]
                 else:
                     op2nd = F[job - 1, t]
                 F[job, t] = min(F[job - 1, t], op2nd)
@@ -188,11 +190,20 @@ def pricing_algorithm(benchmark, lambda_0, lambda_j, n_col2add):
         # -- backtracking -- return n_col2add new schedules
         # An empirically good choice appeared to be adding those three columns that
         # correspond to those three values of t for which F_n(t) is most negative
-        cols2add = np.argsort(F[-1])[:n_col2add]
+        cols2add = np.argsort(F[-1, int(np.ceil(hmin)):])[:n_col2add] + int(np.ceil(hmin))
         tmp = np.zeros((benchmark['n'], n_col2add), dtype=np.uint16)
-        for i in range(n_col2add):
-            new_sched = np.where(F[:, cols2add[i]] != np.inf)[0]
-            np.put(tmp[:, i], new_sched, 1)
+        for idx, t_init in enumerate(cols2add):
+            new_sched = list()
+            t = t_init
+            for j in range(benchmark['n'], 0, -1):
+                # cycle from the last row of F through the beginning
+                if t == 0:
+                    break
+                elif F[j, t] != F[j-1, t]:
+                    new_sched.append(j-1)
+                    t -= benchmark['p'][j-1]
+
+            np.put(tmp[:, idx], new_sched, 1)
 
         return tmp
 
@@ -202,6 +213,7 @@ def pricing_algorithm(benchmark, lambda_0, lambda_j, n_col2add):
  resolve a RLP with the dual variables. After that, it iteratively add new column
  to find a new better solution if possible
  
+ param: config dictionary from toml file
  b: string that specify from where import the benchmark
  verbose: boolean variable that imply more verbosity (then more printing on console)
  
@@ -299,10 +311,12 @@ def column_generation(param, b, verbose):
         master.write(param['PATH']['model_path'] + 'master_model.rlp')
         master.optimize()
 
-        # compute the dual variables lambda (remove lambda_0) and consequently the reduced cost
+        # compute the dual variables lambda_j
         lambda_j = np.array([const.Pi for const in master.getConstrs()])
-        lambda_0, lambda_j = lambda_j[0].copy(), lambda_j[1:].copy()
-        rc = np.array([sc[s] - A[:, s] @ lambda_j for s in range(S)])
+
+        # (split lambda_0) and consequently the reduced cost
+        # lambda_0, lambda_j = lambda_j[0].copy(), lambda_j[1:].copy()
+        # rc = np.array([sc[s] - A[:, s] @ lambda_j for s in range(S)])
 
         # DECOMPRESSED WAY FOR COMPUTE rc - into the paper the one above is the first version while the
         # one below is the last version but more verbose into code formulation
@@ -318,18 +332,18 @@ def column_generation(param, b, verbose):
         #     tmp_list.append(res)
         # tmp_list = np.array(tmp_list)
 
-        # TODO: only the schedules selected by the RLP?
-        # if not min(rc[np.where(master.X)[0]) < 0:
-        # if not np.where(rc < -1e-9)[0].size:
-        if not np.where(rc < 0)[0].size:
-            verbose_print('No schedule with negative reduced cost into solution')
-            break
+        # # TODO: only the schedules selected by the RLP?
+        # # if not min(rc[np.where(master.X)[0]) < 0:
+        # # if not np.where(rc < -1e-9)[0].size:
+        # if not np.where(rc < 0)[0].size:
+        #     verbose_print('No schedule with negative reduced cost into solution')
+        #     break
 
         # ** PRICING ALGORITHM **
         # call the pricing subproblem in case there are negatives rc
-        new_schedules = pricing_algorithm(benchmark, lambda_0, lambda_j, param['PARAMETERS']['nnc'])
+        new_schedules = pricing_algorithm(benchmark, lambda_j, param['PARAMETERS']['nnc'])
         if not len(new_schedules):
-            # exit because F* hasn't new schedule to add
+            # exit because there isn't new schedule to add
             verbose_print('No new schedule to add, already into the optimal solution')
             break
 
@@ -391,7 +405,7 @@ def column_generation(param, b, verbose):
     verbose_print(print_timing(n_iter, htime, btime, tot_time))
 
     # write results into directory out
-    write2file(benchmark, master, A, n_iter, htime, btime, tot_time, b, param['PATH']['res_path'])
+    # write2file(benchmark, master, A, n_iter, htime, btime, tot_time, b, param['PATH']['res_path'])
 
 
 """
