@@ -5,7 +5,6 @@ plot_path  = 'plot/'
 res_path   = 'out/'
 
 [PARAMETERS]
-MAX_ITER = 500              # maximum number of col_gen iteration without adding a single column
 MIN = 2000                  # minimum number of heuristic iteration
 MAX = 5000                  # maximum number of heuristic iteration
 m   = [3,4,5]               # number of machine poll

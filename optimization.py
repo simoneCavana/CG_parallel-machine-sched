@@ -154,7 +154,7 @@ def neighborhood_search(d, benchmark, rng):
 
 
 def pricing_algorithm(benchmark, lambda_j, n_col2add):
-    pj = np.cumsum(benchmark['p'][np.arange(benchmark['n'])])
+    pj = np.cumsum(benchmark['p'])
     hmin, hmax = processing_bound(benchmark)
 
     # sel_sched_idx = np.where(model.X)[0]
@@ -169,20 +169,6 @@ def pricing_algorithm(benchmark, lambda_j, n_col2add):
         if job != 0:
             # set the actual job because dual variable lambda are n+1
             real_job = job - 1
-
-            # from the Branch and Bound condition
-            # check r_j + p_j <= t <= d_j
-            # r_j = C_j^min + 1 - p_j
-            # d_j = C_j^min
-            #
-            # cjmin = np.inf
-            # for s in np.where(A[real_job, sel_sched_idx])[0]:
-            #     sched = smith_order(np.where(A[:, sel_sched_idx[s]])[0], benchmark['p'], benchmark['w'])
-            #     vtmp = np.cumsum(benchmark['p'][sched])[np.where(sched == real_job)[0]].item()
-            #     if cjmin > vtmp:
-            #         cjmin = vtmp
-            #
-            # rj, dj = cjmin + 1 - benchmark['p'][real_job], cjmin
 
             for t, fjt in enumerate(fj):
                 # for each t = 0, ..., min{P(j), Hmax}
@@ -260,7 +246,6 @@ def column_generation(param, b, verbose):
 
     env.start()  # start env to update above setting
     start = process_time()  # start counting time
-    verbose_print('Starting column generation')
 
     # ** GENERATE BENCHMARK **
     # check b parameter and extract the benchmark dictionary
@@ -316,7 +301,7 @@ def column_generation(param, b, verbose):
     set_cover.write(param['PATH']['model_path'] + 'set_cover.lp')
 
     n_iter = 1          # number of total iteration
-    miss_counter = 0    # number of consecutive iteration without adding a new column after pricing
+    verbose_print('Starting column generation')
 
     while True:
         master = set_cover.relax()              # solve the continuous relaxation of current master
@@ -336,37 +321,25 @@ def column_generation(param, b, verbose):
             verbose_print('No new schedule to add, already into the optimal solution')
             break
 
-        # update A with the new schedules if they doesn't exist already
-        for sched in new_schedules.T:
-            if not any(np.equal(A, sched[:, None]).all(0)):
-                A = np.concatenate((A, sched[:, None]), axis=1)
+        # update A with the new schedules
+        # check column existence is counterproductive because the algorithm don't go on the next column in this way
+        A = np.concatenate((A, new_schedules), axis=1)
 
-        if S < A.shape[1]:
-            # we added at least a new schedule to A, so add new variables to
-            # the set-covering problem and re-compute schedule cost vector
-            for i in range(A.shape[1] - S):
-                # for each new column
-                new_sched = A[:, S+i]
-                # compute schedule cost and append it to sc variable
-                new_cost = sched_cost(np.where(new_sched)[0], benchmark['p'], benchmark['w'], True)
-                sc = np.append(sc, new_cost)
-                # creates a new Column with the corresponding coefficients and constraints
-                new_col = gp.Column(1., set_cover.getConstrs()[0])          # the first constraint is constant for all
-                new_col.addTerms(list(new_sched[np.where(new_sched)[0]]),
-                                 list(np.array(set_cover.getConstrs()[1:])[np.where(new_sched)[0]]))
-                # add a variable for the new column of the set-cover
-                x[S + i] = set_cover.addVar(obj=new_cost, vtype=gp.GRB.BINARY, name=f'x_s[{S + i}]', column=new_col)
+        for i in range(A.shape[1] - S):
+            # for each new column
+            new_sched = A[:, S + i]
+            # compute schedule cost and append it to sc variable
+            new_cost = sched_cost(np.where(new_sched)[0], benchmark['p'], benchmark['w'], True)
+            sc = np.append(sc, new_cost)
+            # creates a new Column with the corresponding coefficients and constraints
+            new_col = gp.Column(1., set_cover.getConstrs()[0])  # the first constraint is constant for all
+            new_col.addTerms(list(new_sched[np.where(new_sched)[0]]),
+                             list(np.array(set_cover.getConstrs()[1:])[np.where(new_sched)[0]]))
+            # add a variable for the new column of the set-cover
+            x[S + i] = set_cover.addVar(obj=new_cost, vtype=gp.GRB.BINARY, name=f'x_s[{S + i}]', column=new_col)
 
-            S = A.shape[1]      # re-assign the number of schedule
-            set_cover.update()  # update the set-cover model
-            miss_counter = 0    # reset the counter for consecutive miss add count
-        else:
-            # we use a counter for the max number of iteration without adding a new single column
-            miss_counter += 1
-            verbose_print('All new schedules were already into the schedules of the problem')
-            if miss_counter > param['PARAMETERS']['MAX_ITER']:
-                verbose_print(f'{miss_counter} consecutively iteration without adding a new single schedule')
-                break
+        S = A.shape[1]      # re-assign the number of schedule
+        set_cover.update()  # update the set-cover model
 
         n_iter += 1
         # print partial time
@@ -375,13 +348,14 @@ def column_generation(param, b, verbose):
                       f'Partial time: {int(part_time / 60)} min {part_time % 60} s')
     # ENDWHILE; the column generation has found the best continuous solution
 
-    btime = 0
+    btime = 0   # branch and bound processing time
     # check both the number of schedules selected and that the values xs of the selected schedules be >= EPS
     sel_sched_idx = np.where(master.x)[0]
     if len(sel_sched_idx) == benchmark['m'] and len(np.where(np.array(master.x) > 1-1e-9)[0]) == len(sel_sched_idx):
         # master solution is already int, print relaxed solution
-        # set_cover.optimize()
         verbose_print(print_solution(benchmark, master, A))
+        # set_cover.optimize()
+        # verbose_print(print_solution(benchmark, set_cover, A))
     else:
         # ** Theorem 1 **
         # for each job check that C_j(s) is the same into every schedule of S*
@@ -398,19 +372,20 @@ def column_generation(param, b, verbose):
             if len(set(cjs)) == 1:
                 res_list.append(True)
             else:
+                # as the first job that we found we can break and declare Theorem1 not respected
                 break
         # ENDFOR;
 
         if len(res_list) == benchmark['n']:
             # Theorem 1 is True
             verbose_print('Theorem 1 validated')
-            # set_cover.optimize()
+            set_cover.optimize()
+            verbose_print(print_solution(benchmark, set_cover, A))
         else:
             # ** B&B on the solution **
-            x_star = master.objVal
             btime = process_time()
             verbose_print('Starting Branch & Bound')
-            branch_and_bound()
+            branch_and_price(master.objVal, A[:, sel_sched_idx])
             # verbose_print(print_solution())
             btime = int(process_time() - btime)  # B&B execution time
 
@@ -419,7 +394,7 @@ def column_generation(param, b, verbose):
     verbose_print(print_timing(n_iter, htime, btime, tot_time))
 
     # write results into directory out
-    write2file(benchmark, master, A, n_iter, htime, btime, tot_time, b, param['PATH']['res_path'])
+    # write2file(benchmark, master, A, n_iter, htime, btime, tot_time, b, param['PATH']['res_path'])
 
 
 """
@@ -432,6 +407,35 @@ def column_generation(param, b, verbose):
 """
 
 
-def branch_and_bound():
-    # TODO: implement B&B
-    pass
+def branch_and_price(lower_bound, A, benchmark):
+    # take the fractional job of minimum index and branch on it
+    sel_sched = [smith_order(np.where(col)[0], benchmark['p'], benchmark['w']) for col in A.T]
+    cj_sched = [np.cumsum(benchmark['p'][s]) for s in sel_sched]
+
+    min_fractional_job, cjmin = 0, 0
+
+    for j in range(benchmark['n']):
+        cjs = list()
+        for ids, s in enumerate(sel_sched):
+            if j in s:
+                cjs.append(cj_sched[ids][np.where(s == j)[0].item()])
+
+        # check if all element in cjs are equals
+        if not len(set(cjs)) == 1:
+            # branch on j
+            min_fractional_job = j
+            cjmin = min(cjs)
+            break
+    # ENDFOR;
+
+    # set rj and dj of min_fractional_job
+    # left branch dj = cjmin
+    # right branch rj = cjmin + 1 - p_j
+    rj, dj = cjmin + 1 - benchmark['p'][min_fractional_job], cjmin
+
+    # compute all new rj and dj of predecessor and successor of min_fractional_job
+    # rj = np.array()
+    # dj = np.array()
+
+    # call the column generation on this branch subproblem
+    #   - run on master with the new time constraints

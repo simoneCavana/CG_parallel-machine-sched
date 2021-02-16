@@ -9,16 +9,16 @@ optimum total cost: 6231.0
 serial schedule cost - UB: 18476
 processing time LB, Hmin: 53.4
 processing time UB, Hmax: 232.6
-selected schedule: [0, 12, 18, 24, 48]
+selected schedule: [7, 21, 29, 43, 45]
 	M1 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
-	M2 <- [5],	C_j(s)=[108],	c_s=1188
-	M3 <- [7, 1],	C_j(s)=[ 51 153],	c_s=1122
-	M4 <- [4, 3],	C_j(s)=[ 51 139],	c_s=950
-	M5 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M2 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M3 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M4 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M5 <- [5],	C_j(s)=[108],	c_s=1188
 
-Total iteration: 5
-Heuristic processing time: 0 min 2 s
+Total iteration: 4
+Heuristic processing time: 0 min 3 s
 Branch & Bound processing time: 0 min 0 s
-Total time elapsed: 0 min 2 s
+Total time elapsed: 0 min 3 s
 
 --------------------------------------------------

@@ -17,14 +17,14 @@ if __name__ == "__main__":
 
     # add the arguments
     parser.add_argument('-v', '--verbose', help='increase output verbosity', action='store_true')
-    parser.add_argument('source', type=str, choices=['rnd', 'beb'],
-                        help='the benchmark onto execute the algorithm (random or from Barnes & Brennan paper')
+    # parser.add_argument('source', type=str, choices=['rnd', 'beb'],
+    #                     help='the benchmark onto execute the algorithm (random or from Barnes & Brennan paper')
 
     # execute the parse_args() method for -h option and some instruction
     args = parser.parse_args()
 
     # call the function to solve the instance on the specified input
-    column_generation(param, args.source, args.verbose)
+    # column_generation(param, args.source, args.verbose)
 
     # for debugging use this line and comment lines 20-21
-    # column_generation(param, 'beb', True)
+    column_generation(param, 'rnd', True)

@@ -1,6 +1,26 @@
 
 machine: 2
 jobs: 5
+w: [  1   2   3   2 100]
+p: [ 5  7  6  3 11]
+
+	+++RESULTS+++
+optimum total cost: 1181.0
+serial schedule cost - UB: 1274
+processing time LB, Hmin: 10.5
+processing time UB, Hmax: 21.5
+selected schedule: [2, 14]
+	M1 <- [3, 2, 1],	C_j(s)=[ 3  9 16],	c_s=65
+	M2 <- [4, 0],	C_j(s)=[11 16],	c_s=1116
+
+Total iteration: 3
+Heuristic processing time: 0 min 1 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 2
+jobs: 5
 w: [1 2 3 2 4]
 p: [5 7 6 3 4]
 
@@ -9,7 +29,27 @@ optimum total cost: 85.0
 serial schedule cost - UB: 134
 processing time LB, Hmin: 9.0
 processing time UB, Hmax: 16.0
-selected schedule: [12, 15]
+selected schedule: [1, 16]
+	M1 <- [4, 1],	C_j(s)=[ 4 11],	c_s=38
+	M2 <- [3, 2, 0],	C_j(s)=[ 3  9 14],	c_s=47
+
+Total iteration: 3
+Heuristic processing time: 0 min 1 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 2
+jobs: 5
+w: [1 2 3 2 4]
+p: [5 7 6 3 4]
+
+	+++RESULTS+++
+optimum total cost: 85.0
+serial schedule cost - UB: 134
+processing time LB, Hmin: 9.0
+processing time UB, Hmax: 16.0
+selected schedule: [14, 15]
 	M1 <- [4, 1],	C_j(s)=[ 4 11],	c_s=38
 	M2 <- [3, 2, 0],	C_j(s)=[ 3  9 14],	c_s=47
 
@@ -29,7 +69,7 @@ optimum total cost: 1181.0
 serial schedule cost - UB: 1274
 processing time LB, Hmin: 10.5
 processing time UB, Hmax: 21.5
-selected schedule: [0, 5]
+selected schedule: [1, 9]
 	M1 <- [4, 0],	C_j(s)=[11 16],	c_s=1116
 	M2 <- [3, 2, 1],	C_j(s)=[ 3  9 16],	c_s=65
 
@@ -49,7 +89,7 @@ optimum total cost: 85.0
 serial schedule cost - UB: 134
 processing time LB, Hmin: 9.0
 processing time UB, Hmax: 16.0
-selected schedule: [4, 12]
+selected schedule: [14, 19]
 	M1 <- [3, 2, 0],	C_j(s)=[ 3  9 14],	c_s=47
 	M2 <- [4, 1],	C_j(s)=[ 4 11],	c_s=38
 
@@ -69,9 +109,129 @@ optimum total cost: 1181.0
 serial schedule cost - UB: 1274
 processing time LB, Hmin: 10.5
 processing time UB, Hmax: 21.5
-selected schedule: [0, 5]
+selected schedule: [9, 14]
 	M1 <- [3, 2, 1],	C_j(s)=[ 3  9 16],	c_s=65
 	M2 <- [4, 0],	C_j(s)=[11 16],	c_s=1116
+
+Total iteration: 3
+Heuristic processing time: 0 min 1 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 2
+jobs: 5
+w: [1 2 3 2 4]
+p: [5 7 6 3 4]
+
+	+++RESULTS+++
+optimum total cost: 85.0
+serial schedule cost - UB: 134
+processing time LB, Hmin: 9.0
+processing time UB, Hmax: 16.0
+selected schedule: [1, 5]
+	M1 <- [4, 1],	C_j(s)=[ 4 11],	c_s=38
+	M2 <- [3, 2, 0],	C_j(s)=[ 3  9 14],	c_s=47
+
+Total iteration: 3
+Heuristic processing time: 0 min 1 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 2
+jobs: 5
+w: [  1   2   3   2 100]
+p: [ 5  7  6  3 11]
+
+	+++RESULTS+++
+optimum total cost: 1181.0
+serial schedule cost - UB: 1274
+processing time LB, Hmin: 10.5
+processing time UB, Hmax: 21.5
+selected schedule: [0, 1]
+	M1 <- [3, 2, 1],	C_j(s)=[ 3  9 16],	c_s=65
+	M2 <- [4, 0],	C_j(s)=[11 16],	c_s=1116
+
+Total iteration: 3
+Heuristic processing time: 0 min 1 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 2
+jobs: 5
+w: [  1   2   3   2 100]
+p: [ 5  7  6  3 11]
+
+	+++RESULTS+++
+optimum total cost: 1181.0
+serial schedule cost - UB: 1274
+processing time LB, Hmin: 10.5
+processing time UB, Hmax: 21.5
+selected schedule: [0, 1]
+	M1 <- [3, 2, 1],	C_j(s)=[ 3  9 16],	c_s=65
+	M2 <- [4, 0],	C_j(s)=[11 16],	c_s=1116
+
+Total iteration: 3
+Heuristic processing time: 0 min 2 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 2
+jobs: 5
+w: [1 2 3 2 4]
+p: [5 7 6 3 4]
+
+	+++RESULTS+++
+optimum total cost: 85.0
+serial schedule cost - UB: 134
+processing time LB, Hmin: 9.0
+processing time UB, Hmax: 16.0
+selected schedule: [5, 19]
+	M1 <- [3, 2, 0],	C_j(s)=[ 3  9 14],	c_s=47
+	M2 <- [4, 1],	C_j(s)=[ 4 11],	c_s=38
+
+Total iteration: 3
+Heuristic processing time: 0 min 1 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 2
+jobs: 5
+w: [  1   2   3   2 100]
+p: [ 5  7  6  3 11]
+
+	+++RESULTS+++
+optimum total cost: 1181.0
+serial schedule cost - UB: 1274
+processing time LB, Hmin: 10.5
+processing time UB, Hmax: 21.5
+selected schedule: [0, 1]
+	M1 <- [3, 2, 1],	C_j(s)=[ 3  9 16],	c_s=65
+	M2 <- [4, 0],	C_j(s)=[11 16],	c_s=1116
+
+Total iteration: 3
+Heuristic processing time: 0 min 1 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 2
+jobs: 5
+w: [1 2 3 2 4]
+p: [5 7 6 3 4]
+
+	+++RESULTS+++
+optimum total cost: 85.0
+serial schedule cost - UB: 134
+processing time LB, Hmin: 9.0
+processing time UB, Hmax: 16.0
+selected schedule: [3, 14]
+	M1 <- [3, 2, 0],	C_j(s)=[ 3  9 14],	c_s=47
+	M2 <- [4, 1],	C_j(s)=[ 4 11],	c_s=38
 
 Total iteration: 3
 Heuristic processing time: 0 min 1 s
