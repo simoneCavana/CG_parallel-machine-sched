@@ -7,37 +7,14 @@ p: [8 7 8 5 5 4 4 3 3]
 	+++RESULTS+++
 optimum total cost: 382.0
 serial schedule cost - UB: 865
-processing time LB: 10.333333333333334
-processing time UB: 21.0
-selected schedule: [0, 10, 11]
-	M0 <- [6, 2, 0],	sum(p_j)=20,	c_s=132
-	M1 <- [7, 5, 3],	sum(p_j)=12,	c_s=123
-	M2 <- [8, 4, 1],	sum(p_j)=15,	c_s=127
+processing time LB, Hmin: 10.333333333333334
+processing time UB, Hmax: 21.0
+selected schedule: [10, 13, 14]
+	M1 <- [6, 2, 0],	C_j(s)=[ 4 12 20],	c_s=132
+	M2 <- [8, 5, 4],	C_j(s)=[ 3  7 12],	c_s=129
+	M3 <- [7, 3, 1],	C_j(s)=[ 3  8 15],	c_s=121
 
-Total iteration: 1
-Heuristic processing time: 0 min 2 s
-Branch & Bound processing time: 0 min 0 s
-Total time elapsed: 0 min 2 s
-
---------------------------------------------------
-machine: 3
-jobs: 9
-w: [1 4 7 5 5 6 7 7 9]
-p: [8 7 8 5 5 4 4 3 3]
-
-	+++RESULTS+++
-optimum total cost: 382.0
-serial schedule cost - UB: 865
-processing time LB: 10.333333333333334
-processing time UB: 21.0
-selected schedule: [4, 11, 13, 21, 22]
-	M0 <- [8, 5, 4],	sum(p_j)=12,	c_s=129
-	M1 <- [8, 3, 1],	sum(p_j)=15,	c_s=127
-	M2 <- [7, 4, 1],	sum(p_j)=15,	c_s=121
-	M3 <- [6, 2, 0],	sum(p_j)=20,	c_s=132
-	M4 <- [7, 5, 3],	sum(p_j)=12,	c_s=123
-
-Total iteration: 1
+Total iteration: 4
 Heuristic processing time: 0 min 2 s
 Branch & Bound processing time: 0 min 0 s
 Total time elapsed: 0 min 2 s

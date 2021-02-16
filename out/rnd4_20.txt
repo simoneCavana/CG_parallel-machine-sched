@@ -1,23 +1,46 @@
 
 machine: 4
 jobs: 20
-w: [11 29 54 49 80 83 47 52 13 27 23 55 88 58 23 49 86 82 54 75]
-p: [ 3  4  8  2 10  9  6  1  3  4  5  3  7  5  9  8 10  3  6  1]
+w: [97 66 79 38 13 59  5 87 29 75 50 46 87 14 78 45 82 37 47 67]
+p: [53 49 57 78 57 34 22 11 34 46 35 59 67 73  2 45 30 37 79 82]
 
 	+++RESULTS+++
-optimum total cost: 12337.0
-serial schedule cost - UB: 39667
-processing time LB: 19.25
-processing time UB: 34.25
-selected schedule: [0, 1, 2, 3]
-	M0 <- [17, 5, 2, 10],	sum(p_j)=25,	c_s=2897
-	M1 <- [3, 13, 16, 1, 14],	sum(p_j)=30,	c_s=3265
-	M2 <- [7, 11, 18, 6, 15, 0],	sum(p_j)=27,	c_s=3037
-	M3 <- [19, 12, 4, 9, 8],	sum(p_j)=25,	c_s=3138
+optimum total cost: 103899.0
+serial schedule cost - UB: 333538
+processing time LB, Hmin: 176.0
+processing time UB, Hmax: 299.0
+selected schedule: [13, 15, 36, 37]
+	M1 <- [14, 9, 1, 19, 13],	C_j(s)=[  2  48  97 179 252],	c_s=25679
+	M2 <- [7, 5, 12, 8, 3],	C_j(s)=[ 11  45 112 146 224],	c_s=26102
+	M3 <- [16, 2, 15, 18, 6],	C_j(s)=[ 30  87 132 211 233],	c_s=26355
+	M4 <- [0, 10, 17, 11, 4],	C_j(s)=[ 53  88 125 184 241],	c_s=25763
 
-Total iteration: 1
+Total iteration: 517
 Heuristic processing time: 0 min 6 s
 Branch & Bound processing time: 0 min 0 s
-Total time elapsed: 0 min 6 s
+Total time elapsed: 0 min 20 s
+
+--------------------------------------------------
+machine: 4
+jobs: 20
+w: [51 92 48 32 63 67 67 83 82  2 36  6 51 94 84 33 93  4 14 24]
+p: [ 59  47  89  43  90  62  88  53  35   5  87  99  49   1   9  57  20 100
+  86  25]
+
+	+++RESULTS+++
+optimum total cost: 90499.0
+serial schedule cost - UB: 280255
+processing time LB, Hmin: 201.0
+processing time UB, Hmax: 351.0
+selected schedule: [1, 3, 8, 32]
+	M1 <- [8, 12, 4, 18],	C_j(s)=[ 35  84 174 260],	c_s=21756
+	M2 <- [14, 7, 6, 10],	C_j(s)=[  9  62 150 237],	c_s=24484
+	M3 <- [13, 1, 19, 0, 15, 9, 11],	C_j(s)=[  1  48  73 132 189 194 293],	c_s=21377
+	M4 <- [16, 5, 3, 2, 17],	C_j(s)=[ 20  82 125 214 314],	c_s=22882
+
+Total iteration: 531
+Heuristic processing time: 0 min 6 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 22 s
 
 --------------------------------------------------

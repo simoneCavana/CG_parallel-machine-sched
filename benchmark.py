@@ -3,9 +3,9 @@ import os.path
 
 """
 the structure of the output has to be something like this
-benchmark = {'m': 3, 'n': 9,
-             'w': np.array([1, 4, 7, 5, 5, 6, 7, 7, 9]),
-             'p': np.array([8, 7, 8, 5, 5, 4, 4, 3, 3])}
+benchmark = {'m': 3, 'n': 25,
+             'w': np.array([1, 1, 1, 2, 2, 4, 4, 5, 6, 6, 6, 6, 4, 4, 4, 7, 7, 7, 5, 6, 7, 8, 8, 8, 9]),
+             'p': np.array([9, 8, 8, 8, 8, 8, 8, 7, 8, 7, 6, 6, 3, 3, 3, 5, 3, 3, 2, 2, 2, 2, 2, 1, 1])}
 """
 
 

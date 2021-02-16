@@ -8,15 +8,15 @@ p: [ 97  84 106 106  67  76  42 101  70  98  62  47  78  79  63  39  58  36
 	+++RESULTS+++
 optimum total cost: 16675.0
 serial schedule cost - UB: 53925
-processing time LB: 266.0
-processing time UB: 425.0
-selected schedule: [15, 17, 18, 19]
-	M0 <- [16, 12, 7, 2],	sum(p_j)=343,	c_s=4449
-	M1 <- [18, 13, 8, 5, 0],	sum(p_j)=363,	c_s=4122
-	M2 <- [17, 14, 10, 6, 4, 1],	sum(p_j)=354,	c_s=3924
-	M3 <- [19, 15, 11, 9, 3],	sum(p_j)=322,	c_s=4180
+processing time LB, Hmin: 266.0
+processing time UB, Hmax: 425.0
+selected schedule: [4, 5, 7, 19]
+	M1 <- [18, 13, 8, 5, 1],	C_j(s)=[ 41 120 190 266 350],	c_s=4096
+	M2 <- [19, 15, 11, 9, 3],	C_j(s)=[ 32  71 118 216 322],	c_s=4180
+	M3 <- [16, 12, 7, 2],	C_j(s)=[ 58 136 237 343],	c_s=4449
+	M4 <- [17, 14, 10, 6, 4, 0],	C_j(s)=[ 36  99 161 203 270 367],	c_s=3950
 
-Total iteration: 1
+Total iteration: 13
 Heuristic processing time: 0 min 6 s
 Branch & Bound processing time: 0 min 0 s
 Total time elapsed: 0 min 6 s
@@ -31,17 +31,17 @@ p: [ 97  84 106 106  67  76  42 101  70  98  62  47  78  79  63  39  58  36
 	+++RESULTS+++
 optimum total cost: 16675.0
 serial schedule cost - UB: 53925
-processing time LB: 266.0
-processing time UB: 425.0
-selected schedule: [7, 9, 36, 39]
-	M0 <- [16, 12, 7, 2],	sum(p_j)=343,	c_s=4449
-	M1 <- [19, 15, 11, 9, 3],	sum(p_j)=322,	c_s=4180
-	M2 <- [18, 13, 8, 5, 1],	sum(p_j)=350,	c_s=4096
-	M3 <- [17, 14, 10, 6, 4, 0],	sum(p_j)=367,	c_s=3950
+processing time LB, Hmin: 266.0
+processing time UB, Hmax: 425.0
+selected schedule: [3, 5, 18, 29]
+	M1 <- [16, 12, 7, 3],	C_j(s)=[ 58 136 237 343],	c_s=4449
+	M2 <- [17, 14, 10, 6, 4, 0],	C_j(s)=[ 36  99 161 203 270 367],	c_s=3950
+	M3 <- [19, 15, 11, 9, 2],	C_j(s)=[ 32  71 118 216 322],	c_s=4180
+	M4 <- [18, 13, 8, 5, 1],	C_j(s)=[ 41 120 190 266 350],	c_s=4096
 
-Total iteration: 1
+Total iteration: 11
 Heuristic processing time: 0 min 6 s
 Branch & Bound processing time: 0 min 0 s
-Total time elapsed: 0 min 6 s
+Total time elapsed: 0 min 7 s
 
 --------------------------------------------------

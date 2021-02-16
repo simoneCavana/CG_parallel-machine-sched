@@ -7,14 +7,56 @@ p: [ 46  86  93  82  96  52  48 109 100  77  39  55  78  40  45]
 	+++RESULTS+++
 optimum total cost: 17584.0
 serial schedule cost - UB: 44699
-processing time LB: 276.0
-processing time UB: 421.3333333333333
-selected schedule: [7, 8, 12]
-	M0 <- [14, 10, 7, 5, 2],	sum(p_j)=338,	c_s=5618
-	M1 <- [13, 11, 9, 6, 3, 0],	sum(p_j)=348,	c_s=5714
-	M2 <- [12, 8, 4, 1],	sum(p_j)=360,	c_s=6252
+processing time LB, Hmin: 276.0
+processing time UB, Hmax: 421.3333333333333
+selected schedule: [6, 14, 24]
+	M1 <- [14, 10, 9, 4, 1],	C_j(s)=[ 45  84 161 257 343],	c_s=5445
+	M2 <- [13, 11, 7, 5, 2],	C_j(s)=[ 40  95 204 256 349],	c_s=6093
+	M3 <- [12, 8, 6, 3, 0],	C_j(s)=[ 78 178 226 308 354],	c_s=6046
 
-Total iteration: 1
+Total iteration: 10
+Heuristic processing time: 0 min 4 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 4 s
+
+--------------------------------------------------
+machine: 3
+jobs: 15
+w: [ 2  4  5  5  7  4  4 11 11  9  5  8 12  8  9]
+p: [ 46  86  93  82  96  52  48 109 100  77  39  55  78  40  45]
+
+	+++RESULTS+++
+optimum total cost: 17584.0
+serial schedule cost - UB: 44699
+processing time LB, Hmin: 276.0
+processing time UB, Hmax: 421.3333333333333
+selected schedule: [23, 24, 26]
+	M1 <- [14, 10, 7, 5, 2],	C_j(s)=[ 45  84 193 245 338],	c_s=5618
+	M2 <- [12, 8, 6, 3, 0],	C_j(s)=[ 78 178 226 308 354],	c_s=6046
+	M3 <- [13, 11, 9, 4, 1],	C_j(s)=[ 40  95 172 268 354],	c_s=5920
+
+Total iteration: 10
+Heuristic processing time: 0 min 4 s
+Branch & Bound processing time: 0 min 0 s
+Total time elapsed: 0 min 4 s
+
+--------------------------------------------------
+machine: 3
+jobs: 15
+w: [ 2  4  5  5  7  4  4 11 11  9  5  8 12  8  9]
+p: [ 46  86  93  82  96  52  48 109 100  77  39  55  78  40  45]
+
+	+++RESULTS+++
+optimum total cost: 17584.000000000004
+serial schedule cost - UB: 44699
+processing time LB, Hmin: 276.0
+processing time UB, Hmax: 421.3333333333333
+selected schedule: [3, 5, 19]
+	M1 <- [13, 11, 7, 5, 2],	C_j(s)=[ 40  95 204 256 349],	c_s=6093
+	M2 <- [14, 10, 9, 4, 1],	C_j(s)=[ 45  84 161 257 343],	c_s=5445
+	M3 <- [12, 8, 6, 3, 0],	C_j(s)=[ 78 178 226 308 354],	c_s=6046
+
+Total iteration: 8
 Heuristic processing time: 0 min 4 s
 Branch & Bound processing time: 0 min 0 s
 Total time elapsed: 0 min 4 s

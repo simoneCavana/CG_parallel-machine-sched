@@ -157,26 +157,40 @@ def pricing_algorithm(benchmark, lambda_j, n_col2add):
     pj = np.cumsum(benchmark['p'][np.arange(benchmark['n'])])
     hmin, hmax = processing_bound(benchmark)
 
+    # sel_sched_idx = np.where(model.X)[0]
+
     # INIT
-    F = np.full((len(lambda_j), int(np.ceil(hmax))), np.inf)
+    F = np.full((len(lambda_j), int(np.ceil(hmax)) + 1), np.inf)
     F[0, 0] = -lambda_j[0]
 
     # RECURSION PASS
     for job, fj in enumerate(F):
+        # for each job (skip the base job 0)
         if job != 0:
-            # for each job (skip the base job 0)
+            # set the actual job because dual variable lambda are n+1
+            real_job = job - 1
+
+            # from the Branch and Bound condition
+            # check r_j + p_j <= t <= d_j
+            # r_j = C_j^min + 1 - p_j
+            # d_j = C_j^min
+            #
+            # cjmin = np.inf
+            # for s in np.where(A[real_job, sel_sched_idx])[0]:
+            #     sched = smith_order(np.where(A[:, sel_sched_idx[s]])[0], benchmark['p'], benchmark['w'])
+            #     vtmp = np.cumsum(benchmark['p'][sched])[np.where(sched == real_job)[0]].item()
+            #     if cjmin > vtmp:
+            #         cjmin = vtmp
+            #
+            # rj, dj = cjmin + 1 - benchmark['p'][real_job], cjmin
+
             for t, fjt in enumerate(fj):
                 # for each t = 0, ..., min{P(j), Hmax}
-                # set the actual job because dual variable lambda are n+1
-                real_job = job - 1
-                if t > min(pj[real_job], hmax):
+                if t > min(pj[real_job], int(np.ceil(hmax))):
                     # leave the current values (probably inf) and skip to a new job
                     break
 
-                # check the condition r_j + p_j <= t <= d_j
-                # d_j = Hmax
-                # r_j = ?
-                if benchmark['p'][real_job] <= t <= int(np.ceil(hmax)):
+                if benchmark['p'][real_job] <= t:
                     op2nd = F[job - 1, t - benchmark['p'][real_job]] + benchmark['w'][real_job] * t - lambda_j[job]
                 else:
                     op2nd = F[job - 1, t]
@@ -187,7 +201,7 @@ def pricing_algorithm(benchmark, lambda_j, n_col2add):
         # optimal solution
         return np.empty(0)
     else:
-        # -- backtracking -- return n_col2add new schedules
+        # -- backtracing -- return n_col2add new schedules
         # An empirically good choice appeared to be adding those three columns that
         # correspond to those three values of t for which F_n(t) is most negative
         cols2add = np.argsort(F[-1, int(np.ceil(hmin)):])[:n_col2add] + int(np.ceil(hmin))
@@ -284,8 +298,8 @@ def column_generation(param, b, verbose):
                   to append/concatenate elements to MVar of gurobi and retrieve it later
     """
 
-    x = set_cover.addVars(S, obj=0, vtype=gp.GRB.BINARY, name='x_s')
-    # x = set_cover.addMVar(S, obj=0, vtype=gp.GRB.BINARY, name='x_s')              # ** with MVar **
+    x = set_cover.addVars(S, vtype=gp.GRB.BINARY, name='x_s')
+    # x = set_cover.addMVar(S, vtype=gp.GRB.BINARY, name='x_s')              # ** with MVar **
     # compute schedules cost - sc
     sc = np.array([sched_cost(np.where(A[:, col])[0], benchmark['p'], benchmark['w'], True) for col in range(S)])
 
@@ -314,31 +328,6 @@ def column_generation(param, b, verbose):
         # compute the dual variables lambda_j
         lambda_j = np.array([const.Pi for const in master.getConstrs()])
 
-        # (split lambda_0) and consequently the reduced cost
-        # lambda_0, lambda_j = lambda_j[0].copy(), lambda_j[1:].copy()
-        # rc = np.array([sc[s] - A[:, s] @ lambda_j for s in range(S)])
-
-        # DECOMPRESSED WAY FOR COMPUTE rc - into the paper the one above is the first version while the
-        # one below is the last version but more verbose into code formulation
-        # tmp_list = list()
-        # for s in range(S):
-        #     s_ord = smith_order(np.argwhere(A[:, s]).flatten(), benchmark['p'], benchmark['w'])
-        #     p_ord = np.cumsum(benchmark['p'][s_ord])
-        #     tmp = A[:, s].copy()
-        #     tmp[s_ord] = p_ord
-        #     res = 0
-        #     for j in range(J):
-        #         res += (benchmark['w'][j] * tmp[j] - lambda_j[j]) * A[j, s]
-        #     tmp_list.append(res)
-        # tmp_list = np.array(tmp_list)
-
-        # # TODO: only the schedules selected by the RLP?
-        # # if not min(rc[np.where(master.X)[0]) < 0:
-        # # if not np.where(rc < -1e-9)[0].size:
-        # if not np.where(rc < 0)[0].size:
-        #     verbose_print('No schedule with negative reduced cost into solution')
-        #     break
-
         # ** PRICING ALGORITHM **
         # call the pricing subproblem in case there are negatives rc
         new_schedules = pricing_algorithm(benchmark, lambda_j, param['PARAMETERS']['nnc'])
@@ -358,15 +347,15 @@ def column_generation(param, b, verbose):
             for i in range(A.shape[1] - S):
                 # for each new column
                 new_sched = A[:, S+i]
-                # creates a new Column with the corresponding coefficients and constraints
-                new_col = gp.Column(1., set_cover.getConstrs()[0])
-                new_col.addTerms(list(new_sched[np.where(new_sched)[0]]),
-                                 list(np.array(set_cover.getConstrs()[1:])[np.where(new_sched)[0]]))
-                # add a variable for the new column of the set-cover
-                x[S+i] = set_cover.addVar(vtype=gp.GRB.BINARY, name=f'x_s[{S+i}]', column=new_col)
                 # compute schedule cost and append it to sc variable
                 new_cost = sched_cost(np.where(new_sched)[0], benchmark['p'], benchmark['w'], True)
                 sc = np.append(sc, new_cost)
+                # creates a new Column with the corresponding coefficients and constraints
+                new_col = gp.Column(1., set_cover.getConstrs()[0])          # the first constraint is constant for all
+                new_col.addTerms(list(new_sched[np.where(new_sched)[0]]),
+                                 list(np.array(set_cover.getConstrs()[1:])[np.where(new_sched)[0]]))
+                # add a variable for the new column of the set-cover
+                x[S + i] = set_cover.addVar(obj=new_cost, vtype=gp.GRB.BINARY, name=f'x_s[{S + i}]', column=new_col)
 
             S = A.shape[1]      # re-assign the number of schedule
             set_cover.update()  # update the set-cover model
@@ -386,26 +375,51 @@ def column_generation(param, b, verbose):
                       f'Partial time: {int(part_time / 60)} min {part_time % 60} s')
     # ENDWHILE; the column generation has found the best continuous solution
 
-    sel_sched_idx = np.where(master.X)[0]
-    if len(sel_sched_idx) == benchmark['m'] and np.isin(np.array(master.X)[sel_sched_idx], 1.).all():
+    btime = 0
+    # check both the number of schedules selected and that the values xs of the selected schedules be >= EPS
+    sel_sched_idx = np.where(master.x)[0]
+    if len(sel_sched_idx) == benchmark['m'] and len(np.where(np.array(master.x) > 1-1e-9)[0]) == len(sel_sched_idx):
         # master solution is already int, print relaxed solution
-        btime = 0
+        # set_cover.optimize()
         verbose_print(print_solution(benchmark, master, A))
-    # TODO: elif theorem:
     else:
-        # ** B&B on the solution **
-        btime = process_time()
-        verbose_print('Starting Branch & Bound')
-        branch_and_bound()
-        # verbose_print(print_solution())
-        btime = int(process_time() - btime)  # B&B execution time
+        # ** Theorem 1 **
+        # for each job check that C_j(s) is the same into every schedule of S*
+        sel_sched = [smith_order(np.where(A[:, s])[0], benchmark['p'], benchmark['w']) for s in sel_sched_idx]
+        cj_sched = [np.cumsum(benchmark['p'][s]) for s in sel_sched]
+        res_list = list()
+        for j in range(benchmark['n']):
+            cjs = list()
+            for ids, s in enumerate(sel_sched):
+                if j in s:
+                    cjs.append(cj_sched[ids][np.where(s == j)[0].item()])
+
+            # check if all element in cjs are equals
+            if len(set(cjs)) == 1:
+                res_list.append(True)
+            else:
+                break
+        # ENDFOR;
+
+        if len(res_list) == benchmark['n']:
+            # Theorem 1 is True
+            verbose_print('Theorem 1 validated')
+            # set_cover.optimize()
+        else:
+            # ** B&B on the solution **
+            x_star = master.objVal
+            btime = process_time()
+            verbose_print('Starting Branch & Bound')
+            branch_and_bound()
+            # verbose_print(print_solution())
+            btime = int(process_time() - btime)  # B&B execution time
 
     # print timing
     tot_time = int(process_time() - start)
     verbose_print(print_timing(n_iter, htime, btime, tot_time))
 
     # write results into directory out
-    # write2file(benchmark, master, A, n_iter, htime, btime, tot_time, b, param['PATH']['res_path'])
+    write2file(benchmark, master, A, n_iter, htime, btime, tot_time, b, param['PATH']['res_path'])
 
 
 """

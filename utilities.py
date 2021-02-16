@@ -102,9 +102,10 @@ def print_solution(benchmark, model, A):
                   f'\n\t+++RESULTS+++',
                   f'\noptimum total cost: {model.objVal}',
                   f'\nserial schedule cost - UB: {serial_cost_ub(benchmark)}',
-                  f'\nprocessing time LB: {hmin}\nprocessing time UB: {hmax}',
+                  f'\nprocessing time LB, Hmin: {hmin}'
+                  f'\nprocessing time UB, Hmax: {hmax}',
                   f'\nselected schedule: {list(sel_sched_idx)}')
-    scnd_part = [f'\n\tM{i} <- {list(s)},\tsum(p_j)={sum(benchmark["p"][s])},'
+    scnd_part = [f'\n\tM{i+1} <- {list(s)},\tC_j(s)={np.cumsum(benchmark["p"][s])},'
                  f'\tc_s={sched_cost(s, benchmark["p"], benchmark["w"])}' for i, s in enumerate(sel_sched)]
     return "".join(list(first_part) + scnd_part)
 
