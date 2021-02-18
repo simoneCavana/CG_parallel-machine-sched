@@ -14,7 +14,8 @@ However, the code is well commented in english.
 - config.toml: contains hyper-parameters configuration;
 - benchmark.py: generate random benchmarks or read them from file;
 - utilities.py: contains outline functionality;
-- optimization.py: contains the implementation of heuristics and column generation including the pricing algorithm;
+- heuristic.py: contains the implementation of heuristics;
+- optimization.py: contains the implementation the column generation including the pricing algorithm;
 - \_\_main__.py: the main file.
 
 ## Execution instruction
