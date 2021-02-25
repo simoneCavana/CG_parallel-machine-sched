@@ -1,0 +1,859 @@
+
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [6, 11, 36, 39, 45]
+	M1 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M2 <- [5],	C_j(s)=[108],	c_s=1188
+	M3 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M4 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M5 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [0, 5, 9, 34, 39]
+	M1 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M2 <- [5],	C_j(s)=[108],	c_s=1188
+	M3 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M4 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M5 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [0, 3, 5, 25, 44]
+	M1 <- [5],	C_j(s)=[108],	c_s=1188
+	M2 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M3 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M4 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M5 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [1, 18, 30, 44, 49]
+	M1 <- [4, 3],	C_j(s)=[ 51 139],	c_s=950
+	M2 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M3 <- [5],	C_j(s)=[108],	c_s=1188
+	M4 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M5 <- [7, 1],	C_j(s)=[ 51 153],	c_s=1122
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [9, 17, 19, 36, 44]
+	M1 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M2 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M3 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M4 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M5 <- [5],	C_j(s)=[108],	c_s=1188
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [9, 32, 38, 43, 49]
+	M1 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M2 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M3 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M4 <- [5],	C_j(s)=[108],	c_s=1188
+	M5 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [10, 13, 14, 41, 43]
+	M1 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M2 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M3 <- [5],	C_j(s)=[108],	c_s=1188
+	M4 <- [4, 3],	C_j(s)=[ 51 139],	c_s=950
+	M5 <- [7, 1],	C_j(s)=[ 51 153],	c_s=1122
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [5, 15, 25, 29, 38]
+	M1 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M2 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M3 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M4 <- [5],	C_j(s)=[108],	c_s=1188
+	M5 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [36, 37, 38, 45, 49]
+	M1 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M2 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M3 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M4 <- [5],	C_j(s)=[108],	c_s=1188
+	M5 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [5, 13, 29, 31, 43]
+	M1 <- [5],	C_j(s)=[108],	c_s=1188
+	M2 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M3 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M4 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M5 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [3, 6, 19, 34, 45]
+	M1 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M2 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M3 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M4 <- [5],	C_j(s)=[108],	c_s=1188
+	M5 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [2, 15, 18, 32, 45]
+	M1 <- [5],	C_j(s)=[108],	c_s=1188
+	M2 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M3 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M4 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M5 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 3 s
+Total time elapsed: 0 min 3 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [1, 27, 31, 47, 49]
+	M1 <- [5],	C_j(s)=[108],	c_s=1188
+	M2 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M3 <- [4, 3],	C_j(s)=[ 51 139],	c_s=950
+	M4 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M5 <- [7, 1],	C_j(s)=[ 51 153],	c_s=1122
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 3 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [1, 8, 25, 27, 46]
+	M1 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M2 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M3 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M4 <- [5],	C_j(s)=[108],	c_s=1188
+	M5 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 1 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [2, 26, 41, 45, 47]
+	M1 <- [7, 1],	C_j(s)=[ 51 153],	c_s=1122
+	M2 <- [4, 3],	C_j(s)=[ 51 139],	c_s=950
+	M3 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M4 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M5 <- [5],	C_j(s)=[108],	c_s=1188
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 1 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [0, 1, 4, 18, 42]
+	M1 <- [5],	C_j(s)=[108],	c_s=1188
+	M2 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M3 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M4 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M5 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [6, 13, 17, 18, 30]
+	M1 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M2 <- [5],	C_j(s)=[108],	c_s=1188
+	M3 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M4 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M5 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 3 s
+Total time elapsed: 0 min 3 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [25, 29, 35, 39, 49]
+	M1 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M2 <- [5],	C_j(s)=[108],	c_s=1188
+	M3 <- [4, 3],	C_j(s)=[ 51 139],	c_s=950
+	M4 <- [7, 1],	C_j(s)=[ 51 153],	c_s=1122
+	M5 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 3 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [12, 14, 16, 19, 31]
+	M1 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M2 <- [5],	C_j(s)=[108],	c_s=1188
+	M3 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M4 <- [7, 1],	C_j(s)=[ 51 153],	c_s=1122
+	M5 <- [4, 3],	C_j(s)=[ 51 139],	c_s=950
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [7, 21, 26, 42, 44]
+	M1 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M2 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M3 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M4 <- [5],	C_j(s)=[108],	c_s=1188
+	M5 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [1, 3, 19, 35, 44]
+	M1 <- [5],	C_j(s)=[108],	c_s=1188
+	M2 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M3 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M4 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M5 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 3 s
+Total time elapsed: 0 min 3 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [10, 13, 24, 33, 34]
+	M1 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M2 <- [5],	C_j(s)=[108],	c_s=1188
+	M3 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M4 <- [7, 1],	C_j(s)=[ 51 153],	c_s=1122
+	M5 <- [4, 3],	C_j(s)=[ 51 139],	c_s=950
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [2, 16, 31, 34, 36]
+	M1 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M2 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M3 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M4 <- [5],	C_j(s)=[108],	c_s=1188
+	M5 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [3, 15, 16, 29, 46]
+	M1 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M2 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M3 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M4 <- [5],	C_j(s)=[108],	c_s=1188
+	M5 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [18, 27, 30, 32, 35]
+	M1 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M2 <- [5],	C_j(s)=[108],	c_s=1188
+	M3 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M4 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M5 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 1 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [0, 3, 20, 22, 39]
+	M1 <- [5],	C_j(s)=[108],	c_s=1188
+	M2 <- [7, 1],	C_j(s)=[ 51 153],	c_s=1122
+	M3 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M4 <- [4, 3],	C_j(s)=[ 51 139],	c_s=950
+	M5 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 1 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [13, 16, 26, 28, 37]
+	M1 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M2 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M3 <- [5],	C_j(s)=[108],	c_s=1188
+	M4 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M5 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 1 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [0, 4, 6, 30, 32]
+	M1 <- [5],	C_j(s)=[108],	c_s=1188
+	M2 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M3 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M4 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M5 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [5, 11, 15, 18, 29]
+	M1 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M2 <- [7, 1],	C_j(s)=[ 51 153],	c_s=1122
+	M3 <- [4, 3],	C_j(s)=[ 51 139],	c_s=950
+	M4 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M5 <- [5],	C_j(s)=[108],	c_s=1188
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 3 s
+Total time elapsed: 0 min 3 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [10, 13, 18, 34, 45]
+	M1 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M2 <- [5],	C_j(s)=[108],	c_s=1188
+	M3 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M4 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M5 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 1 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [0, 10, 27, 28, 36]
+	M1 <- [5],	C_j(s)=[108],	c_s=1188
+	M2 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M3 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M4 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M5 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 2 s
+Total time elapsed: 0 min 2 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [18, 27, 30, 32, 42]
+	M1 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+	M2 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M3 <- [5],	C_j(s)=[108],	c_s=1188
+	M4 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M5 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 3 s
+Total time elapsed: 0 min 3 s
+
+--------------------------------------------------
+machine: 5
+jobs: 9
+w: [ 1  5  6  5  5 11  5  7 16]
+p: [ 57 102 112  88  51 108  40  51 106]
+smith_order: [8 7 6 5 4 3 2 1 0]
+serial schedule cost - UB: 18476
+
+	+++RESULTS+++
+optimum total cost: 6231.0
+processing time LB, Hmin: 53.4
+processing time UB, Hmax: 232.6
+selected schedule: [0, 9, 31, 41, 43]
+	M1 <- [5],	C_j(s)=[108],	c_s=1188
+	M2 <- [7, 3],	C_j(s)=[ 51 139],	c_s=1052
+	M3 <- [8, 0],	C_j(s)=[106 163],	c_s=1859
+	M4 <- [4, 1],	C_j(s)=[ 51 153],	c_s=1020
+	M5 <- [6, 2],	C_j(s)=[ 40 152],	c_s=1112
+
+LB: 6231.0
+GAP: 0.0
+NBEB: 0
+
+Heuristic processing time: 0 min 1 s
+Total time elapsed: 0 min 1 s
+
+--------------------------------------------------

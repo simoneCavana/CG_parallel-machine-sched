@@ -10,18 +10,19 @@ However, the code is well commented in english.
 * Scipy 1.5.4
 * Gurobi 9.1 (license needed)
 
-## File description
+## Files description
 - config.toml: contains hyper-parameters configuration;
 - benchmark.py: generate random benchmarks or read them from file;
 - utilities.py: contains outline functionality;
 - heuristic.py: contains the implementation of heuristics;
 - optimization.py: contains the implementation the column generation including the pricing algorithm;
+- manager.py: contains the B&B tree implementation and nodes managing
 - \_\_main__.py: the main file.
 
-## Execution instruction
+## Execution instructions
 The main script needs two arguments, the first one is mandatory and represent the type of benchmark to work on (beb, rnd), while the second one is the verbose option (-v) to print results on console and is an optional argument.   
 
-### Example
+### Examples
 For a single verbose execution on Barnes & Brennan benchmark:
 ```
 python __main__.py beb -v
@@ -32,5 +33,5 @@ for i in {1..25}; do python __main__.py rnd; done
 ```
 
 ## To Do:
-- implement Branch & Bound on time interval;
+- fix bug on Branch & Bound;
 - implement the final optimization to the pricing subproblem.
